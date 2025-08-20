@@ -1,13 +1,19 @@
-let listaDeCompras=['Arroz','Biscoito', 'Suco'];
-const listaDeItens={
-    item1: 'biscoito',
-    item2: 'suco',
-    quantidade1:3,
-    quantidade2:4,
+let listaDeItens = [];
 
-    mostrarItens: function() {
-        alert("Comprei " + listaDeItens.quantidade1 + " pacotes de " + listaDeItens.item1);
-    }
+const form = document.getElementById("form-itens");
+const itensInput = document.getElementById("receber-item");
+form.addEventListener("submit", function(evento){
+    evento.preventDefault();
+    salvarItem();
+});
+
+
+function salvarItem(){
+    const comprasItem = itensInput.value;
+    
+    listaDeItens.push({
+        valor: comprasItem
+    })
+
+    console.log(listaDeItens);
 }
-
-listaDeItens.mostrarItens();
